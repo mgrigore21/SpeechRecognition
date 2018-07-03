@@ -1,4 +1,10 @@
 
+# Part of code for my MSc Thesis Speech Recognition Methods
+# Summary: Use of speech recognition database from Warden P. Speech Commands: A public dataset for single-word speech recognition, 2017
+#          Extract spectrograms for each recording
+#          Train CNN with spectograms so that accuracy is >90 for 20 classes of commands
+#          After 70 epochs, 95% accuracy, Succes!
+
 # coding: utf-8
 
 # # Speech Recognition using CNN  #
@@ -67,6 +73,8 @@ def log_specgram(audio, sample_rate, window_size=20,
 
 
 # read from files and create spectrogram
+# split spectograms in train and validation folders
+# creates folder structure for Keras part
 
 root='../original_wav_input/train/audio/'
 #all the categories in the audio folder
@@ -102,6 +110,7 @@ for item in dirlist:
 
 # In[1]:
 
+# CNN part
 
 from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Sequential
